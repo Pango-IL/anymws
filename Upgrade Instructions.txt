@@ -1,0 +1,42 @@
+New versions require PHP 8.1 or above so make sure your server has it before upgrading.
+
+Note: You have to logout and login again on your devices after installing the latest version of custom Android application you created using app builder server if you are upgrading from below v9.4. You can notify your users about it by using new announcement feature. If you want to upgrade without breaking compatibility with previous version of Android app then make sure you use same Firebase project you used while installing the app to download Firebase Service Account JSON in Step 6.
+
+Follow these steps to upgrade SMS Gateway v3.x.x or above to latest version.
+
+[1] Remove all the files and folders except config.php and uploads folder from your SMS Gateway directory.
+[2] Extract SMS.Gateway.Package.zip to your SMS Gateway directory.
+[3] Run the upgrade.php or go to the login page.
+[5] You will need to add cron job if you are upgrading from v5.0.1 or below for schedule, auto retry and recieved messages to email features to work. You can do this by following below guide.
+
+https://smsgateway.rbsoft.org/docs/setting_up_the_cron_job_1.htm
+
+[6] You have to download the Firbease Services Account JSON by following below video tutorial and upload it by logging in to your SMS Gateway Admin account and going to Settings->Features. This is only necessary if you are upgrading from below v9.4
+
+https://youtu.be/aU16Zke3qUY
+
+[7] It is required to create custom APK using build server if you are using Firebase. If you don't want to use Firebase or if you are using it on PC where IP keeps changing, then you can use APK from the following link.
+
+https://rbsoft.org/downloads/sms-gateway/sms-gateway.apk
+
+You can change logo, name, package name, server URL and languages of Android app by registering on app builder server from below. You will be able to create up to 3 customized apks for every new version.
+
+https://app-builder.rbsoft.org/register
+
+If you need help creating customized apk file then you can follow below video tutorial.
+
+https://youtu.be/EjlIrGf4NOU
+
+You must use the same Firebase project you used to get Firebase Service Account JSON while downloading google-services.json for custom APK.
+
+https://youtu.be/NAzhYMXdVks?t=52
+
+[8] To enable PayPal follow below guide.
+
+https://smsgateway.rbsoft.org/docs/setup_subscriptions.htm
+
+It is required to create a separate cron job for renewing subscriptions. It is required if you want to create subscriptions manually or use PayPal. If you followed all steps from above then you don't have to do this, but if you only want to use manual subscriptions then you can set it up as shown in below guide.
+
+https://smsgateway.rbsoft.org/docs/setting_up_the_cron_job_2.htm
+
+Note :- Upgrade from v1.x.x or v2.x.x to v9.x.x isn't possible. You need to do a fresh install if you are using v1.x.x or v2.x.x.
